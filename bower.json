@@ -1,0 +1,21 @@
+{
+  "name": "pftsports",
+  "description": "An Ionic project",
+  "main": "",
+  "authors": [
+    "Ionic Framework"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/CarterBL24/pftsports",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ng.datepicker-ui": "*"
+  }
+}

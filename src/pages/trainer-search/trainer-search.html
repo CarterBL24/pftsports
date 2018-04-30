@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Trainer Search
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background:url(assets/img/0DjUSkRwQIeDfghhWwaB_premierfitnessSMALL.png) no-repeat center;background-size:cover;" id="page6">
+
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+    <ion-item>
+      <ion-label>Sport</ion-label>
+      <ion-select [(ngModel)]="select" #C (ionChange)="onChange(C.value)" interface="popover">
+        <ion-option *ngFor="let sport of sport" value="{{sport.key}}">
+          {{sport.key}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <!----ion-item>
+      <ion-label>Class</ion-label>
+      <ion-select [(ngModel)]="select2" #V (ionChange)="classChange(V.value)" interface="popover" disabled="{{isInputDisabled}}" text-wrap>
+        <ion-option *ngFor="let sport of classes" value="{{class}}" text-wrap>{{class}}</ion-option>
+      </ion-select>
+    </!--ion-item-->
+
+    <ion-list no-padding>
+      <ion-item-sliding *ngFor="let trainer of testingTrainers">
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="{{trainer.person.photo}}">
+          </ion-avatar>
+          <h2>{{trainer.person.firstName}}{{trainer.person.lastName}} </h2>
+          <p>{{"Training:" + " " + trainer.data}}</p>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="balanced" icon-start (click)="goToViewTrainer(trainer.person)">
+            <ion-icon name="ios-more"></ion-icon>
+            More
+          </button>
+          <button ion-button color="secondary" icon-start (click)="requestTrainer(trainer.person)">
+            <ion-icon name="calendar"></ion-icon>
+            Request
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+</ion-content>

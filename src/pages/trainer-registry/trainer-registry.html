@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar hideBackButton="false"></ion-navbar>
+</ion-header>
+
+    <ion-content padding style="background:url(assets/img/4gV9U2BQRmiP699yZeRk_premierfitnessSMALL.png) no-repeat center;background-size:cover;" id="page2">
+      <!--div-- class="spacer" style="width:300px;height:68px;" id="trainerRegistry-spacer4"></!--div-->
+
+      <div>
+        <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto; border-radius: 60%;" />
+      </div>
+      <button id="newUserRegistration-button15" ion-button color="stable" block small (click)="getImage()">
+        Upload Photo
+      </button>
+
+      <form id="trainerRegistry-form1">
+        <ion-item id="trainerRegistry-input6">
+          <ion-label>
+            First Name:
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="firstName" name='firstName' placeholder="John" pattern="([A-Za-z]+[,.]?[ ]?|[a-z]+['-]?)+" maxlength="15"></ion-input>
+        </ion-item>
+        <ion-item id="trainerRegistry-input7">
+          <ion-label>
+            Last Name:
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="lastName" name='lastName' placeholder="Doe" pattern="([A-Za-z]+[,.]?[ ]?|[a-z]+['-]?)+" maxlength="20"></ion-input>
+        </ion-item>
+        <ion-item id="trainerRegistry-input8">
+          <ion-label>
+            Email:
+          </ion-label>
+          <ion-input type="email" [(ngModel)]="userEmail" name='userEmail' placeholder="johndoe@umes.edu email"></ion-input>
+        </ion-item>
+        <ion-item id="trainerRegistry-input10">
+          <ion-label>
+            Phone#:
+          </ion-label>
+          <ion-input type="tel" required="true" [(ngModel)]="phoneNumber" name='phoneNumber' pattern="\d{3}\d{3}\d{4}" placeholder="123-456-7890" maxlength="12"></ion-input>
+        </ion-item>
+        <ion-item id="trainerRegistry-input9">
+          <ion-label>
+            Password:
+          </ion-label>
+          <ion-input type="password" required="true" [(ngModel)]="userPassword" name='userPassword' maxlength="15"></ion-input>
+        </ion-item>
+        <ion-item id="cPass">
+          <ion-label>
+            Confirm Password:
+          </ion-label>
+          <ion-input type="password" required="true" [(ngModel)]="confirmPass" name='confirmPass' maxlength="15"></ion-input>
+        </ion-item>
+        <ion-item id="trainerRegistry-input1">
+          <ion-label>
+            Enter Trainer ID:
+          </ion-label>
+          <ion-input type="password" required="true" [(ngModel)]="tID" name='tID' maxlength="4"></ion-input>
+        </ion-item>
+
+        <!----ion-item-- id="trainerRegistry-input2">
+          <ion-label>
+            Confirm Trainer ID:
+          </ion-label>
+          <ion-input type="password" required="true" [(ngModel)]="ctID" name='ctID' maxlength="4"></ion-input>
+        </!--ion-item-->
+      </form>
+
+
+      <button id="trainerRegistry-button4" ion-button color="positive" full (click)="createTrainer(firstName, lastName, userEmail, phoneNumber, userPassword, confirmPass, tID)">
+        Submit
+      </button>
+
+
+      <button id="trainerRegistry-button6" ion-button clear color="balanced" full small on-click="goToTrainerLogin()">
+        Already have an account?
+      </button>
+    </ion-content>

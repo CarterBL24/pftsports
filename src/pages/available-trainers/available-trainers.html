@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle class="menuToggle">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Available Trainers
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background:url(assets/img/0DjUSkRwQIeDfghhWwaB_premierfitnessSMALL) no-repeat center;background-size:cover;" id="page6">
+  <div id="availableTrainers-container7">
+    <ion-list id="availableTrainers-list4">
+      <ion-searchbar placeholder="" name="" id="availableTrainers-search2"></ion-searchbar>
+
+      <ion-item *ngFor="let user of users">
+        <ion-thumbnail item-start>
+          <img src="{{user.photo}}" />
+        </ion-thumbnail>
+        <h2>{{user.firstName}} {{user.lastName}}</h2>
+        <p></p>
+        <button ion-button clear item-end (click)=goToViewTrainer()>View</button>
+      </ion-item>
+
+
+    </ion-list>
+  </div>
+</ion-content>

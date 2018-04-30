@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content padding style="background:url(assets/img/H9IId0M6RnyoYFimAayg_premierfitnessSMALL.png) no-repeat center;background-size:cover;" id="page7">
+  <div class="spacer" style="width:300px;height:83px;" id="login-spacer9"></div>
+  <form id="login-form5">
+    <ion-list id="login-list3">
+      <ion-item id="login-input23">
+        <ion-label>
+          Email:
+        </ion-label>
+        <ion-input type="email" [(ngModel)]="userEmail" name='userEmail' placeholder="johndoe@umes.edu"></ion-input>
+      </ion-item>
+      <ion-item id="login-input24">
+        <ion-label>
+          Password:
+        </ion-label>
+        <ion-input type="password" required="true" [(ngModel)]="userPassword" name='userPassword' maxlength="15"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="width:300px;height:83px;" id="login-spacer8"></div>
+    <button id="login-button8" ion-button color="positive" full icon-right (click)="loginUser(userEmail, userPassword)">
+      Log in
+      <ion-icon name="log-in"></ion-icon>
+    </button>
+    <button id="login-button9" ion-button clear color="positive" full small on-click="goToNewUserRegistration()">
+      Or create an account
+    </button>
+  </form>
+</ion-content>

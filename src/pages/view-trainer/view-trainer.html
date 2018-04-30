@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar hideBackButton="false">
+    <ion-title>
+     View Trainer
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding style="background:url(assets/img/0DjUSkRwQIeDfghhWwaB_premierfitnessSMALL.png) no-repeat center;background-size:cover;" id="page14">
+  <div padding >
+    <img src="{{myPerson.photo}}" *ngIf="myPerson.photo" alt="Ionic File" style="display:block;width:60%;height:auto;margin-left:auto;margin-right:auto; border-radius: 50%;" />
+  </div>
+  <form id="profile-form7">
+    <ion-list id="profile-list13" text-wrap>
+      <ion-item id="profile-input11">
+        <ion-label>
+          Name:
+        </ion-label>
+        <ion-input type="text"  disabled="true"  ngModel="{{ myPerson.firstName}} {{ myPerson.lastName }}" name="userName"></ion-input>
+      </ion-item>
+
+      <ion-item id="profile-input13">
+        <ion-label>
+          Phone #:
+        </ion-label>
+        <ion-input type="text" disabled="true" ngModel="{{ myPerson.phoneNumber }}" name="userPhoneNumber"></ion-input>
+      </ion-item>
+
+
+      <ion-item id="profile-input12">
+        <ion-label>
+          Email:
+        </ion-label>
+        <ion-input type="email" disabled="true" ngModel="{{ myPerson.email}}" name="userEmail"></ion-input>
+      </ion-item>
+      <ion-item id="profile-input15" text-wrap>
+        <ion-label>
+          Classes:
+        </ion-label>
+        <ion-input type="text" disabled="true" ngModel="{{ trainerDetails.classes }}" name="userClasses" ></ion-input>
+      </ion-item>
+      <ion-item id="profile-input16">
+        <ion-label>
+          Details:
+        </ion-label>
+        <ion-input type="text" disabled="true" ngModel="{{ trainerDetails.details}}" name="userDetails" ></ion-input>
+      </ion-item>
+      <ion-item id="profile-input17">
+        <ion-label>
+          Location:
+        </ion-label>
+        <ion-input type="text" disabled="true" ngModel="{{ trainerDetails.location}}" name="userLocation" ></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

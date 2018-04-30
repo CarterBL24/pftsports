@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+      <ion-buttons left start>
+      <button ui-sref="trainerLogin" ion-button on-click="signOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Trainer Profile
+    </ion-title>
+    <ion-buttons right start>
+      <button ui-sref="messages" ion-button on-click="goToMessages()">
+        <ion-icon name="mail"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background:url(assets/img/joYu8GzcQjraX0GzNMYg_premierfitnessSMALL.png) no-repeat center;background-size:cover;" id="page3">
+
+    <div class="spacer" style="width:300px;height:74px;" id="profile-spacer14"></div>
+  
+  <div id="trainerprofile-container16" style="max-width: 100%">
+    <h4 id="trainerprofile-heading11" style="color:black;text-align:left;">
+      What sport(s) are you training?*
+    </h4>
+    <ion-scroll scrollY="true" style="height: 200px ; max-width: 100%;">
+      <ion-list id="trainingprofile-list14" no-padding inset>
+        <ion-item *ngFor="let sports of classes">
+          <ion-label color="none" id="trainerprofile-list-item18">{{sports.selectSports}}</ion-label>
+          <ion-checkbox [(ngModel)]="sports.checked" (ionChange)="notify()" name="{{sports}}" checked="false"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </ion-scroll>
+    <h4 id="trainerprofile-heading12" style="color:black;text-align:left;">
+      Where are you training?*
+    </h4>
+    <ion-item>
+      <ion-label>
+      </ion-label>
+      <ion-select #C (ionChange)="onChange()" interface="popover" [(ngModel)]="select" name="select">
+        <ion-option *ngFor="let location of locations" value="{{location}}">{{location}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <h4 id="trainerprofile-heading13" style="color:black;text-align:left;">
+      Additional Training Details
+    </h4>
+    <ion-item id="trainerprofile-textarea3">
+      <ion-label></ion-label>
+      <ion-textarea placeholder="Hours, rates, etc." [(ngModel)]="details" name="details"></ion-textarea>
+    </ion-item>
+    <h5 id="trainerprofile-heading15" style="color:#5C5C5C;font-weight:600;text-align:left;">
+      * = Required Fields
+    </h5>
+    <button id="trainerprofile-button11" ion-button [disabled]="isButtonDisabled" (click)="checkSports(select, details)" color="balanced" block standard icon-left style="border-radius:50px 50px 50px 50px;">
+      <ion-icon name="create"></ion-icon>
+      Start Training
+    </button>
+  </div>
+
+
+
+
+
+
+
+      <!----div class="spacer" style="width:300px;height:38.99px;" id="trainerProfile-spacer5"></!--div>
+      <button id="trainerProfile-button5" ion-button color="positive" full small>
+        Save
+      </button>
+      <button id="trainerProfile-button11" ion-button color="balanced" full style="font-weight:600;">
+        Start Training
+      </button>
+    <!---/form-->
+</ion-content>

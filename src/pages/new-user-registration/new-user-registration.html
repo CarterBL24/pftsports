@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar hideBackButton="false">
+    <ion-title>
+      Sign Up
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding style="background:url(assets/img/d1lwiGoQtyfmgJ3nfZwL_premierfitnessSMALL.png) no-repeat center;background-size:cover;" id="page4">
+
+  <div>
+    <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto; border-radius: 60%;" />
+  </div>
+  <button id="newUserRegistration-button15" ion-button color="stable" block small (click)="getImage()">
+    Upload Photo
+  </button>
+
+  <form id="newUserRegistration-form4">
+      <ion-item id="newUserRegistration-input17">
+        <ion-label>
+          First Name:
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="firstName" name='firstName' placeholder="John" pattern="([A-Za-z]+[,.]?[ ]?|[a-z]+['-]?)+" maxlength="15"></ion-input>
+      </ion-item>
+      <ion-item id="newUserRegistration-input20">
+        <ion-label>
+          Last Name:
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="lastName" name='lastName' placeholder="Doe" pattern="([A-Za-z]+[,.]?[ ]?|[a-z]+['-]?)+" maxlength="20"></ion-input>
+      </ion-item>
+      <ion-item id="newUserRegistration-input18">
+        <ion-label>
+          Email:
+        </ion-label>
+        <ion-input type="email" [(ngModel)]="userEmail" name='userEmail' placeholder="johndoe@umes.edu email"></ion-input>
+      </ion-item>
+      <ion-item id="phoneNumber">
+          <ion-label>
+            Phone#:
+          </ion-label>
+          <ion-input type="tel" required="true" [(ngModel)]="phoneNumber" name='phoneNumber' pattern="\d{3}\d{3}\d{4}" placeholder="123-456-7890" maxlength="10"></ion-input>
+        </ion-item>
+
+    <ion-item id="newUserRegistration-input21">
+      <ion-label>
+        Height (in inches):
+      </ion-label>
+      <ion-input type="number" required="true" [(ngModel)]="height" name='height' placeholder="##" min="35" max="80" maxlength="2"></ion-input>
+    </ion-item>
+    <ion-item id="newUserRegistration-input22">
+      <ion-label>
+        Weight:
+      </ion-label>
+      <ion-input type="number" required="true" [(ngModel)]="weight" name='weight' placeholder="###" min="75" max="350" maxlength="3"></ion-input>
+    </ion-item>
+
+      <ion-item id="password">
+        <ion-label>
+          Password:
+        </ion-label>
+        <ion-input type="password"  required="true" [(ngModel)]="userPassword" name='userPassword' maxlength="15"></ion-input>
+      </ion-item>
+      <ion-item id="cPass">
+        <ion-label>
+          Confirm Password:
+        </ion-label>
+        <ion-input type="password" required="true" [(ngModel)]="confirmPass" name='confirmPass' maxlength="15"></ion-input>
+      </ion-item>
+   
+    <button id="newUserRegistration-button7" ion-button color="stable" full (click)="createPerson(firstName, lastName, userEmail, phoneNumber, height, weight, userPassword, confirmPass)">
+      Sign up
+    </button>
+  </form>
+</ion-content>

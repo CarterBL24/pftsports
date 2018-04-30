@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+      <button ion-button menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding style="background:url(assets/img/d1lwiGoQtyfmgJ3nfZwL_premierfitnessSMALL.png) no-repeat center;background-size:cover;" id="page4">
+  <div padding>
+    <img src="{{myPerson.photo}}" *ngIf="myPerson.photo" alt="Ionic File" style="display:block;width:60%;height:auto;margin-left:auto;margin-right:auto; border-radius: 50%;" />
+  </div>
+
+  <form id="profile-form8">
+    <div class="spacer" style="width:300px;height:74px;" id="profile-spacer14"></div>
+    <ion-item id="profile-input27">
+      <ion-label>
+        Name:
+      </ion-label>
+      <ion-input type="text" disabled="true" ngModel="{{ myPerson.firstName}} {{ myPerson.lastName }}" name="userName"></ion-input>
+    </ion-item>
+    <ion-item id="profile-input28">
+      <ion-label>
+        Email:
+      </ion-label>
+      <ion-input type="email" disabled="true" ngModel="{{ myPerson.email}}" name="userEmail"></ion-input>
+    </ion-item>
+    <ion-item id="profile-input29">
+      <ion-label>
+        Phone:
+      </ion-label>
+      <ion-input type="tel" disabled="true" ngModel="{{ myPerson.phoneNumber }}" name="userPhoneNumber"></ion-input>
+    </ion-item>
+    <ion-item id="profile-input30">
+      <ion-label>
+        Height
+      </ion-label>
+      <ion-input type="number" disabled="true" ngModel="{{ myPerson.height }}" name="userHeight"></ion-input>
+    </ion-item>
+    <ion-item id="profile-input31">
+      <ion-label>
+        Weight:
+      </ion-label>
+      <ion-input type="number" disabled="true" ngModel="{{ myPerson.weight }}" name="userWeight"></ion-input>
+    </ion-item>
+  </form>
+  <button id="profile-button14" ion-button color="positive" full small>
+    Edit Profile
+  </button>
+</ion-content>
